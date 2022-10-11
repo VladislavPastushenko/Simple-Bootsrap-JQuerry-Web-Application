@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Sign-in</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Common styles -->
+    <!-- <link rel="stylesheet" href="style.css"/> -->
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="styles/style.css"/>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="styles/sign-up-in.css"/>
+
+
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="journal/bootstrap.css">
+</head>
+<body style="background-color: #1c52f5;">
+    <div class="container">
+        <div class="row justify-content-between">
+              <div class="col-12 col-md-6 col-lg-5 align-self-center mb-5">
+                <img src="media/Illustration.png" class="img-fluid" alt="digital">
+              </div>
+              <div class="col-12 col-md-6 col-lg-5" alt="digital">
+
+                <!-- SIGN IN -->
+                <div class="sign-up-container" id="sign-in">
+
+                  <div class="sign-up-body">
+                    <div class="d-grid gap-2">
+                      <button class="btn btn-lg btn-primary" type="button" onclick="window.location.href='create-new-sync.html';">Create new Sync</button>
+                    </div>
+
+                    <p class="text-secondary gray-line-text">OR LOGIN WITH EMAIL</p>
+
+                    <!-- Login form, script for login is in /scripts/login.js -->
+                    <form id="login-form">
+                      <fieldset>
+                        <div class="form-group">
+                          <label for="emailInput" class="form-label text-secondary">Email address</label>
+                          <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="passwordInput" class="form-label mt-3 text-secondary">Password</label>
+                          <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password">
+                        </div>
+                        <div class="form-check my-3">
+                          <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMeCheckBox" >
+                          <label class="form-check-label" for="rememberMeCheckBox">
+                            Remember me
+                          </label>
+                          <a href="#" onclick="loadPasswordRecover()" class="link-primary float-lg-end d-block d-lg-inline-block">Forgot password</a>
+                        </div>
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-lg btn-outline-gray" id='login-button' type="button">Login</button>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+
+                  <div class="sign-up-footer">
+                      <span class="text-secondary"> Don't have an account? </span> <a class="link-primary" onclick="loadSignUp()"> Sign up! </a>
+                  </div>
+                </div>
+
+
+                <!-- SIGN UP -->
+                <div class="sign-up-container" style='display: none;' id="sign-up">
+                  <div class="sign-up-body">
+                    <h2 class="text-center mb-3">
+                      Create Account
+                    </h2>
+                    <form id="sign-up-form">
+                      <fieldset>
+                        <div class="form-group">
+                          <label for="loginInput" class="form-label mt-3 text-secondary">Login</label>
+                          <input name="login" class="form-control" id="loginInput" aria-describedby="emailHelp" placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                          <label for="emailInputSignUp" class="form-label mt-3 text-secondary">Email address</label>
+                          <input type="email" name="email" class="form-control" id="emailInputSignUp" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="passwordInputSignUp" class="form-label mt-3 text-secondary">Password</label>
+                          <input type="password" class="form-control" name="password" id="passwordInputSignUp" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                          <label for="confirmPassword" class="form-label mt-3 text-secondary">Confirm password</label>
+                          <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm password">
+                        </div>
+                        <div class="form-check my-3">
+                          <input class="form-check-input" type="checkbox" name="termsAndConditions" id="termsAndConditions" >
+                          <label class="form-check-label" for="termsAndConditions">
+                            I accept <a href="#" class="link-primary"> Terms ans Conditions </a>
+                          </label>
+                        </div>
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-lg btn-primary" id='sign-up-button' type="button">Create account</button>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+
+                  <div class="sign-up-footer">
+                    <span class="text-secondary"> Already have an account? </span> <a class="link-primary" onclick="loadSignIn()"> Login </a>
+                  </div>
+                </div>
+
+
+                <!-- PASSWORD RECOVER -->
+                <div class="sign-up-container" style='display: none;' id="password-recover">
+                  <div class="sign-up-body">
+                    <div class="text-center">
+                      <img src="media/Lock.png" class="img-fluid" alt="lock">
+                    </div>
+                    <h3 class="text-center mt-3">
+                      Recover your password
+                    </h3>
+                    <form id="password-recover-form">
+                      <fieldset>
+                        <div class="form-group my-3">
+                          <label for="emailPasswordRecover" class="form-label mt-3 text-secondary">Email address</label>
+                          <input type="email" name="email" class="form-control" id="emailPasswordRecover" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-lg btn-primary" id='password-recover-button' type="button">Recover Password</button>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div class="sign-up-footer">
+                    <span class="text-secondary"> Go back to </span> <a class="link-primary" onclick="loadSignIn()"> Login </a>
+                  </div>
+                </div>
+
+              </div>
+          </div>
+    </div>
+
+
+    <!-- JQuery and scripts for Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Login action script -->
+    <script src="scripts/login.js"></script>
+
+    <!-- Sign-up action script -->
+    <script src="scripts/sign-up.js"></script>
+
+    <!-- Recover password action script -->
+    <script src="scripts/password-recover.js"></script>
+
+    <script>
+      function loadSignUp() {
+        $('#sign-in').hide()
+        $('#sign-up').show()
+      }
+
+      function loadPasswordRecover() {
+        $('#sign-in').hide()
+        $('#password-recover').show()
+      }
+
+      function loadSignIn() {
+        $('#sign-up').hide()
+        $('#password-recover').hide()
+        $('#sign-in').show()
+      }
+    </script>
+
+</body>
+</html>

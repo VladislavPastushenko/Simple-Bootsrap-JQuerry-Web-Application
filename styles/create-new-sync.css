@@ -1,0 +1,36 @@
+.box {
+    border: 1px solid #eee;
+    padding: 10px 12px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+.radio-switch-container {
+    display: inline-block;
+    border: 1px solid #eee;
+    padding: 1px 2px 2px 2px;
+    border-radius: 20px;
+    background-color: #F5F5F5;
+}
+
+.action-points-container {
+    height: 30vh;
+    position: relative;
+    overflow-y: auto;
+}
+
+.action-card {
+    border: 2px solid #eee;
+    border-radius: 15px;
+    padding: 4px 2px;
+}
+
+
+.check-mark {
+    display: none;
+}
+
+.form-check-input:checked ~ .check-mark {
+    display: inline-block;
+}
